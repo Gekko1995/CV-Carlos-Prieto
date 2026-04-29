@@ -12,7 +12,7 @@ export default function Education() {
   return (
     <section id="educacion" className="section">
       <div className="container">
-        <SectionHeader eyebrow="03 — Formación" title="Educación" />
+        <SectionHeader eyebrow="04 — Formación" title="Educación" />
         <div className="edu-grid">
           {education.map((e, i) => (
             <article key={i} className="edu-card">

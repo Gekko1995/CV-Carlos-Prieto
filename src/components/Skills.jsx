@@ -4,7 +4,7 @@ export default function Skills() {
   return (
     <section id="habilidades" className="section section--alt">
       <div className="container">
-        <SectionHeader eyebrow="04 — Capacidades" title="Habilidades clave" />
+        <SectionHeader eyebrow="05 — Capacidades" title="Habilidades clave" />
         <div className="skills-grid">
           {skills.map((g) => (
             <article key={g.group} className="skill-card">

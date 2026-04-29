@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
+import Contracts from './components/Contracts.jsx';
 import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
 import Skills from './components/Skills.jsx';
@@ -36,6 +37,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Contracts />
         <Experience />
         <Education />
         <Skills />

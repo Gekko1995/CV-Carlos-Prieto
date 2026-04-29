@@ -127,6 +127,7 @@ export const projects = [
 
 export const navLinks = [
   { id: 'sobre',        label: 'Sobre mí' },
+  { id: 'contratos',    label: 'Contratos' },
   { id: 'experiencia',  label: 'Experiencia' },
   { id: 'educacion',    label: 'Educación' },
   { id: 'habilidades',  label: 'Habilidades' },
