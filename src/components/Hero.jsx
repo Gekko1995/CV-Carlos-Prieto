@@ -1,49 +1,70 @@
 import { profile, contact } from '../data.js';
+import { contracts } from '../data/contracts.js';
+import BranchSVG from './BranchSVG.jsx';
+
+function formatM(n) {
+  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)} B`;
+  if (n >= 1_000_000) return `$${Math.round(n / 1_000_000)} M`;
+  return `$${n.toLocaleString('es-CO')}`;
+}
 
 export default function Hero() {
+  const totalContracts = contracts.length;
+  const totalValor = contracts.reduce((s, c) => s + c.valor, 0);
+  const munis = new Set(contracts.map((c) => c.municipio)).size;
+  const years = new Set(contracts.map((c) => c.year)).size;
+
   return (
     <section id="top" className="hero">
-      <div className="container hero__grid">
-        <div className="hero__text">
-          <span className="eyebrow">Disponible para proyectos del sector público</span>
-          <h1 className="hero__name">{profile.name}</h1>
-          <p className="hero__title">{profile.title}</p>
-          <p className="hero__tagline">{profile.tagline}</p>
+      <BranchSVG variant="hero-tr" />
+      <BranchSVG variant="hero-bl" />
 
-          <div className="hero__cta">
-            <a className="btn btn--primary" href="#contacto" onClick={(e) => smoothTo(e, 'contacto')}>
-              Contactar
-            </a>
-            <a className="btn btn--ghost" href="#proyectos" onClick={(e) => smoothTo(e, 'proyectos')}>
-              Ver proyectos
-            </a>
-            <button className="btn btn--ghost" onClick={() => window.print()} type="button">
-              Descargar PDF
-            </button>
-          </div>
-
-          <div className="hero__meta">
-            <span>📍 {contact.location}</span>
-            <span>·</span>
-            <span>Matrícula Profesional · {contact.matricula}</span>
-          </div>
+      <div className="container">
+        <div className="hero__badge">
+          <img src="/images/logo-aconap.png" alt="" />
+          <span>Representante Legal · <strong>ACONAP Soluciones</strong></span>
         </div>
 
-        <div className="hero__photo">
-          <div className="photo">
-            {profile.photo ? (
-              <img
-                src={profile.photo}
-                alt={profile.name}
-                className="photo__img"
-              />
-            ) : (
-              <div className="photo__placeholder" aria-label="Foto profesional (placeholder)">
-                <span className="photo__initials">{profile.initials}</span>
-                <span className="photo__hint">Foto profesional</span>
-              </div>
-            )}
-            <div className="photo__ring" aria-hidden="true"></div>
+        <h1 className="hero__name">{profile.name}</h1>
+        <p className="hero__title">{profile.title} · Contratista del Sector Público</p>
+        <p className="hero__tagline">{profile.tagline}</p>
+
+        <div className="hero__cta">
+          <button className="btn btn--primary" onClick={() => window.print()} type="button">
+            <DownloadIcon /> Descargar HV (PDF)
+          </button>
+          <a className="btn btn--ghost" href="#contacto" onClick={(e) => smoothTo(e, 'contacto')}>
+            Contactar
+          </a>
+        </div>
+
+        <div className="hero__meta">
+          <span>📍 {contact.location}</span>
+          <span>·</span>
+          <span>Matrícula Profesional · {contact.matricula}</span>
+        </div>
+
+        {/* Cifras verificables */}
+        <div className="hero-stats" role="list">
+          <div className="hero-stat" role="listitem">
+            <span className="hero-stat__value">{totalContracts}</span>
+            <span className="hero-stat__label">Contratos</span>
+            <span className="hero-stat__sub">públicos ejecutados</span>
+          </div>
+          <div className="hero-stat" role="listitem">
+            <span className="hero-stat__value">{formatM(totalValor)}</span>
+            <span className="hero-stat__label">Valor gestionado</span>
+            <span className="hero-stat__sub">en pesos colombianos</span>
+          </div>
+          <div className="hero-stat" role="listitem">
+            <span className="hero-stat__value">{munis}</span>
+            <span className="hero-stat__label">Entidades</span>
+            <span className="hero-stat__sub">públicas atendidas</span>
+          </div>
+          <div className="hero-stat" role="listitem">
+            <span className="hero-stat__value">{years}</span>
+            <span className="hero-stat__label">Años</span>
+            <span className="hero-stat__sub">2021 — Actualidad</span>
           </div>
         </div>
       </div>
@@ -55,4 +76,14 @@ function smoothTo(e, id) {
   e.preventDefault();
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function DownloadIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
 }

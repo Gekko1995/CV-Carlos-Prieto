@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { contracts, CATEGORIES } from '../data/contracts.js';
+import YearChart from './YearChart.jsx';
 
 const ALL = '__all__';
 
@@ -51,9 +52,9 @@ export default function Contracts() {
           <span className="eyebrow">Trayectoria contractual</span>
           <h2 className="section__title">Experiencia en el sector público</h2>
           <p className="section__lead">
-            Trayectoria completa contractual de Carlos Andrés Prieto Martín en el sector público
-            colombiano. Toda la información es verificable en SIA Observa de la Auditoría General
-            de la República.
+            Trayectoria contractual completa de Carlos Andrés Prieto Martín en el sector
+            público colombiano. Toda la información es verificable en SIA Observa de la
+            Auditoría General de la República.
           </p>
         </div>
 
@@ -81,6 +82,9 @@ export default function Contracts() {
           </div>
         </div>
 
+        {/* Gráfico de barras por año */}
+        <YearChart />
+
         {/* Filtros */}
         <div className="filters">
           <div className="filters__row">
@@ -95,7 +99,6 @@ export default function Contracts() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-
           <div className="filters__summary">
             Mostrando <strong>{stats.count}</strong> de {contracts.length} contratos
             {stats.count > 0 && (
@@ -104,7 +107,7 @@ export default function Contracts() {
           </div>
         </div>
 
-        {/* Tabla / Cards */}
+        {/* Tabla */}
         {filtered.length === 0 ? (
           <div className="empty">
             <p>No se encontraron contratos con esos filtros.</p>
