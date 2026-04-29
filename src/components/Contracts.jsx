@@ -1,16 +1,9 @@
 import { useMemo, useState } from 'react';
 import { contracts, CATEGORIES } from '../data/contracts.js';
 
-const MUNI_LABEL = (m) => m;
 const ALL = '__all__';
 
 function formatCOP(n) {
-  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(2)} B`;
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)} M`;
-  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)} K`;
-  return `$${n}`;
-}
-function formatCOPLong(n) {
   return `$${n.toLocaleString('es-CO')}`;
 }
 
@@ -46,10 +39,7 @@ export default function Contracts() {
 
   const stats = useMemo(() => {
     const total = filtered.reduce((s, c) => s + c.valor, 0);
-    const byMuni = {};
-    filtered.forEach((c) => { byMuni[c.municipio] = (byMuni[c.municipio] || 0) + 1; });
-    const topMuni = Object.entries(byMuni).sort((a, b) => b[1] - a[1])[0];
-    return { count: filtered.length, total, topMuni };
+    return { count: filtered.length, total };
   }, [filtered]);
 
   const totalAll = useMemo(() => contracts.reduce((s, c) => s + c.valor, 0), []);
@@ -58,8 +48,13 @@ export default function Contracts() {
     <section id="contratos" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="eyebrow">02 — Trayectoria contractual</span>
-          <h2 className="section__title">57 contratos · 5 años · 10 entidades</h2>
+          <span className="eyebrow">Trayectoria contractual</span>
+          <h2 className="section__title">Experiencia en el sector público</h2>
+          <p className="section__lead">
+            Trayectoria completa contractual de Carlos Andrés Prieto Martín en el sector público
+            colombiano. Toda la información es verificable en SIA Observa de la Auditoría General
+            de la República.
+          </p>
         </div>
 
         {/* KPIs */}
@@ -71,8 +66,8 @@ export default function Contracts() {
           </div>
           <div className="kpi-card kpi-card--accent">
             <span className="kpi-card__label">Valor gestionado</span>
-            <span className="kpi-card__value">{formatCOP(totalAll)}</span>
-            <span className="kpi-card__sub">{formatCOPLong(totalAll)} COP</span>
+            <span className="kpi-card__value kpi-card__value--money">{formatCOP(totalAll)}</span>
+            <span className="kpi-card__sub">Pesos colombianos (COP)</span>
           </div>
           <div className="kpi-card">
             <span className="kpi-card__label">Entidades atendidas</span>
@@ -104,7 +99,7 @@ export default function Contracts() {
           <div className="filters__summary">
             Mostrando <strong>{stats.count}</strong> de {contracts.length} contratos
             {stats.count > 0 && (
-              <> · valor total: <strong>{formatCOPLong(stats.total)} COP</strong></>
+              <> · valor total: <strong>{formatCOP(stats.total)} COP</strong></>
             )}
           </div>
         </div>
@@ -127,8 +122,7 @@ export default function Contracts() {
               <span>Municipio</span>
               <span>Categoría</span>
               <span>Objeto</span>
-              <span>Valor</span>
-              <span>Soportes</span>
+              <span>Valor (COP)</span>
             </div>
             {filtered.map((c) => {
               const cat = CATEGORIES[c.categoria];
@@ -152,29 +146,11 @@ export default function Contracts() {
                     </button>
                   </span>
                   <span className="contract__val">{formatCOP(c.valor)}</span>
-                  <span className="contract__links">
-                    {c.siaobserva && (
-                      <a href={c.siaobserva} target="_blank" rel="noopener noreferrer" title="Ficha pública en SIA Observa">
-                        <ExtIcon /> SIA
-                      </a>
-                    )}
-                    {c.acta && (
-                      <a href={c.acta} target="_blank" rel="noopener noreferrer" title="Acta de liquidación">
-                        <DocIcon /> Acta
-                      </a>
-                    )}
-                  </span>
                 </article>
               );
             })}
           </div>
         )}
-
-        <p className="contracts-note">
-          Información verificable públicamente en{' '}
-          <a href="https://siaobserva.auditoria.gov.co" target="_blank" rel="noopener noreferrer">SIA Observa</a>
-          {' '}— Sistema Integral de Auditoría de la Auditoría General de la República de Colombia.
-        </p>
       </div>
     </section>
   );
@@ -190,24 +166,5 @@ function FilterSelect({ label, value, onChange, options }) {
         ))}
       </select>
     </label>
-  );
-}
-
-function ExtIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <polyline points="15 3 21 3 21 9" />
-      <line x1="10" y1="14" x2="21" y2="3" />
-    </svg>
-  );
-}
-
-function DocIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-    </svg>
   );
 }

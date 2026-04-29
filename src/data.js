@@ -126,11 +126,10 @@ export const projects = [
 ];
 
 export const navLinks = [
-  { id: 'sobre',        label: 'Sobre mí' },
-  { id: 'contratos',    label: 'Contratos' },
-  { id: 'experiencia',  label: 'Experiencia' },
-  { id: 'educacion',    label: 'Educación' },
-  { id: 'habilidades',  label: 'Habilidades' },
-  { id: 'proyectos',    label: 'Proyectos' },
-  { id: 'contacto',     label: 'Contacto' },
+  { id: 'sobre',        label: 'Sobre mí',     type: 'anchor' },
+  { id: 'experiencia',  label: 'Experiencia',  type: 'route', to: '/experiencia' },
+  { id: 'educacion',    label: 'Educación',    type: 'anchor' },
+  { id: 'habilidades',  label: 'Habilidades',  type: 'anchor' },
+  { id: 'proyectos',    label: 'Proyectos',    type: 'anchor' },
+  { id: 'contacto',     label: 'Contacto',     type: 'anchor' },
 ];

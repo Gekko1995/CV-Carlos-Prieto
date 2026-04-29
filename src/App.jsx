@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav.jsx';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Contracts from './components/Contracts.jsx';
-import Experience from './components/Experience.jsx';
-import Education from './components/Education.jsx';
-import Skills from './components/Skills.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import MainPage from './pages/MainPage.jsx';
+import ExperienciaPage from './pages/ExperienciaPage.jsx';
 
 const THEME_KEY = 'cv-theme';
 
@@ -32,19 +27,15 @@ export default function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <Nav theme={theme} onToggleTheme={toggleTheme} />
       <main>
-        <Hero />
-        <About />
-        <Contracts />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/experiencia" element={<ExperienciaPage />} />
+        </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }

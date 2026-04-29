@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { navLinks, profile } from '../data.js';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { navLinks } from '../data.js';
 
 export default function Nav({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onHome = location.pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -12,27 +16,59 @@ export default function Nav({ theme, onToggleTheme }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  function handleLinkClick(e, id) {
-    e.preventDefault();
-    setOpen(false);
+  function scrollToId(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function handleAnchor(e, id) {
+    e.preventDefault();
+    setOpen(false);
+    if (onHome) {
+      scrollToId(id);
+    } else {
+      navigate('/');
+      setTimeout(() => scrollToId(id), 80);
+    }
   }
 
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
-        <a className="nav__brand" href="#top" onClick={(e) => handleLinkClick(e, 'top')}>
-          <span className="nav__brand-mark" aria-hidden="true">{profile.initials}</span>
-          <span className="nav__brand-name">Carlos Prieto</span>
-        </a>
+        <Link to="/" className="nav__brand" onClick={() => setOpen(false)}>
+          <img
+            src="/images/logo-aconap.png"
+            alt="ACONAP Soluciones"
+            className="nav__brand-logo"
+            width="36"
+            height="36"
+          />
+          <span className="nav__brand-text">
+            <span className="nav__brand-name">Carlos Prieto</span>
+            <span className="nav__brand-sub">ACONAP Soluciones</span>
+          </span>
+        </Link>
 
         <nav className={`nav__links ${open ? 'nav__links--open' : ''}`}>
-          {navLinks.map((l) => (
-            <a key={l.id} href={`#${l.id}`} onClick={(e) => handleLinkClick(e, l.id)}>
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) => {
+            if (l.type === 'route') {
+              return (
+                <Link
+                  key={l.id}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className={location.pathname === l.to ? 'is-active' : ''}
+                >
+                  {l.label}
+                </Link>
+              );
+            }
+            return (
+              <a key={l.id} href={`#${l.id}`} onClick={(e) => handleAnchor(e, l.id)}>
+                {l.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="nav__actions">
