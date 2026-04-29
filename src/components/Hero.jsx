@@ -31,10 +31,18 @@ export default function Hero() {
 
         <div className="hero__photo">
           <div className="photo">
-            <div className="photo__placeholder" aria-label="Foto profesional (placeholder)">
-              <span className="photo__initials">{profile.initials}</span>
-              <span className="photo__hint">Foto profesional</span>
-            </div>
+            {profile.photo ? (
+              <img
+                src={profile.photo}
+                alt={profile.name}
+                className="photo__img"
+              />
+            ) : (
+              <div className="photo__placeholder" aria-label="Foto profesional (placeholder)">
+                <span className="photo__initials">{profile.initials}</span>
+                <span className="photo__hint">Foto profesional</span>
+              </div>
+            )}
             <div className="photo__ring" aria-hidden="true"></div>
           </div>
         </div>

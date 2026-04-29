@@ -3,6 +3,10 @@ export const profile = {
   title: 'Ingeniero Mecatrónico',
   tagline: 'Soporte técnico · Infraestructura tecnológica · Sector público',
   initials: 'CP',
+  // Para usar tu foto: pon el archivo en public/images/foto.jpg y deja:
+  // photo: '/images/foto.jpg'
+  // Si lo dejas en null, se muestra el placeholder con iniciales.
+  photo: null,
   about:
     'Ingeniero Mecatrónico con amplia experiencia en soporte técnico, gestión de infraestructura tecnológica y mantenimiento industrial para el sector público. Especialista en la ejecución de proyectos de innovación, logística y suministro de soluciones tecnológicas para entidades gubernamentales.',
 };
@@ -13,7 +17,7 @@ export const contact = {
   githubUrl: 'https://github.com/Gekko1995',
   linkedin: 'Carlos Andrés Prieto Martín',
   linkedinUrl: 'https://www.linkedin.com/',
-  matricula: '091259-0654189 CND',
+  matricula: 'Disponible con copia certificada',
   location: 'Colombia',
 };
 
@@ -87,6 +91,10 @@ export const skills = [
   },
 ];
 
+// Para añadir imagen a un proyecto:
+// 1. Pon el archivo en public/images/ (ej. public/images/proyecto-eth.jpg)
+// 2. Añade: image: '/images/proyecto-eth.jpg'
+// Si lo dejas sin image, se muestra solo la tarjeta sin foto.
 export const projects = [
   {
     name: 'Plataforma ETH-ANH (PGV)',
@@ -95,6 +103,7 @@ export const projects = [
       'Plataforma web para la gestión y viabilidad de proyectos de inversión pública: 39 módulos integrados (diagnóstico territorial, gestión financiera, informes, georreferenciación, control documental).',
     stack: ['React', 'Supabase', 'Node/Express', 'Vercel'],
     highlight: 'Plataforma activa en producción',
+    image: null,
   },
   {
     name: 'Aeronaves no tripuladas para ganadería',
@@ -103,6 +112,7 @@ export const projects = [
       'Propuesta de uso de drones aplicada a la industria ganadera del sector de Tocancipá, con foco en monitoreo de hato, cercas y manejo de pastos.',
     stack: ['UAV', 'Sensores', 'Análisis territorial'],
     highlight: 'Propuesta sectorial regional',
+    image: null,
   },
   {
     name: 'Modernización Tecnológica de Concejos',
@@ -111,6 +121,7 @@ export const projects = [
       'Implementación de sistemas de votación electrónica y streaming oficial en los concejos municipales de Gachancipá y Sopó, con instalación, capacitación y soporte continuo.',
     stack: ['Hardware AV', 'Streaming', 'Redes', 'Soporte'],
     highlight: 'Implementación en 2 municipios',
+    image: null,
   },
 ];
 
