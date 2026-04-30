@@ -1119,6 +1119,29 @@ section.section--alt { background: var(--bg-alt); }
   padding-top: 110px;
   padding-bottom: 0;
 }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  transition: color 0.18s, border-color 0.18s, transform 0.18s, background 0.18s;
+  width: auto;
+}
+.back-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateX(-2px);
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg-elev));
+}
+.back-link svg { flex-shrink: 0; }
 
 /* ── BarChart por año ──────────────────────────────────────── */
 .year-chart {
@@ -1819,6 +1842,10 @@ a.contact-card:hover {
 
   /* Branch */
   .branch-bg--hero-tr { width: 220px; height: 220px; right: -70px; opacity: 0.3; }
+
+  /* ExperienciaPage: back-link compacto, no full-width */
+  .experiencia-page__back { padding-top: 84px; padding-bottom: 4px; }
+  .back-link { font-size: 12.5px; padding: 7px 12px 7px 9px; }
 }
 
 /* Phone pequeño (≤ 380px) ────────────────────────────────── */

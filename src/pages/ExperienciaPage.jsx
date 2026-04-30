@@ -10,8 +10,9 @@ export default function ExperienciaPage() {
   return (
     <div className="experiencia-page">
       <div className="container experiencia-page__back">
-        <Link to="/" className="btn btn--ghost btn--small">
-          <BackIcon /> Volver al CV
+        <Link to="/" className="back-link">
+          <BackIcon />
+          <span>Volver al CV</span>
         </Link>
       </div>
       <Contracts />
