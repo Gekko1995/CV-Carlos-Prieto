@@ -821,6 +821,123 @@ section.section--alt { background: var(--bg-alt); }
   color: var(--text-muted);
 }
 
+/* ── Título Profesional (credential card) ──────────────────── */
+.credential {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  padding: 40px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.credential::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+}
+.credential__seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.credential__seal svg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+.credential__body {
+  display: flex;
+  flex-direction: column;
+}
+.credential__institution {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 6px;
+}
+.credential__title {
+  margin: 0 0 4px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--text);
+}
+.credential__institution-full {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.credential__desc {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--text-soft);
+}
+.credential__highlights {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.credential__highlights li {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.credential__highlight-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.credential__highlight-value {
+  font-size: 14.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+.credential__registry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  border-radius: 10px;
+  color: var(--accent);
+  margin-top: auto;
+}
+.credential__registry > div { display: flex; flex-direction: column; line-height: 1.3; }
+.credential__registry-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.credential__registry-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
 /* ── Skills (formato segmentado con descripciones) ─────────── */
 .skills-list {
   display: flex;
@@ -829,7 +946,7 @@ section.section--alt { background: var(--bg-alt); }
 }
 .skill-block {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 80px 1fr;
   gap: 26px;
   padding: 26px 30px;
   background: var(--bg-elev);
@@ -857,9 +974,35 @@ section.section--alt { background: var(--bg-alt); }
 }
 .skill-block:hover::before { opacity: 1; }
 
+.skill-block__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 4px;
+}
+.skill-block__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent) 12%, var(--bg-elev)),
+    color-mix(in srgb, var(--accent) 4%, var(--bg-elev)));
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.skill-block:hover .skill-block__icon {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent) 18%, var(--bg-elev)),
+    color-mix(in srgb, var(--accent) 6%, var(--bg-elev)));
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
 .skill-block__num {
   font-family: 'Crimson Pro', serif;
-  font-size: 44px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: -0.04em;
   color: var(--accent-warm);
@@ -868,11 +1011,10 @@ section.section--alt { background: var(--bg-alt); }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 4px;
 }
 .skill-block__num-total {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--text-muted);
@@ -1582,8 +1724,19 @@ a.contact-card:hover {
 /* Tablet vertical / phablet (≤ 720px) ───────────────────── */
 @media (max-width: 720px) {
   .company-grid { grid-template-columns: 1fr; gap: 14px; }
-  .skill-block { grid-template-columns: 80px 1fr; gap: 20px; padding: 22px 24px; }
-  .skill-block__num { font-size: 36px; }
+  .skill-block { grid-template-columns: 64px 1fr; gap: 18px; padding: 22px 22px; }
+  .skill-block__num { font-size: 30px; }
+  .skill-block__icon { width: 44px; height: 44px; }
+  .skill-block__head { gap: 14px; }
+
+  .credential {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 28px;
+  }
+  .credential__seal { max-width: 180px; margin: 0 auto; }
+  .credential__highlights li { grid-template-columns: 160px 1fr; }
+
   section.section { padding: 64px 0; }
   .hero { padding: 120px 0 60px; }
   .section__header { margin-bottom: 36px; }
@@ -1701,16 +1854,34 @@ a.contact-card:hover {
     gap: 14px;
     padding: 22px 22px;
   }
+  .skill-block__head {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding-top: 0;
+  }
+  .skill-block__icon { width: 40px; height: 40px; }
   .skill-block__num {
     flex-direction: row;
     align-items: baseline;
-    gap: 10px;
-    font-size: 30px;
-    padding-top: 0;
+    gap: 8px;
+    font-size: 26px;
+    margin-left: auto;
   }
   .skill-block__num-total { margin-top: 0; }
   .skill-block__title { font-size: 17px; }
   .skill-block__desc { font-size: 14px; }
+
+  /* Credential card en móvil */
+  .credential { padding: 24px 22px; gap: 20px; }
+  .credential__seal { max-width: 140px; }
+  .credential__title { font-size: 26px; }
+  .credential__highlights li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px 0;
+  }
+  .credential__highlight-value { font-size: 14px; }
 
   /* Company Mission cards */
   .company-card { padding: 22px 22px; }

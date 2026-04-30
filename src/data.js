@@ -5,7 +5,22 @@ export const profile = {
   initials: 'CP',
   photo: null,
   about:
-    'Soy Carlos Andrés Prieto Martín, Ingeniero Mecatrónico titulado por la Fundación Universitaria Agraria de Colombia. Cuento con una sólida formación técnica y tecnológica obtenida en el SENA, lo que me permite integrar el conocimiento teórico con la ejecución práctica en mantenimiento industrial y soporte IT. Mi trayectoria se ha centrado en el sector público, donde he actuado como representante legal y contratista, gestionando proyectos de infraestructura tecnológica, seguridad electrónica y apoyo logístico para diversas administraciones municipales.',
+    'Ingeniero Mecatrónico con una trayectoria integral que combina la precisión de la mecánica industrial con la innovación de la ingeniería moderna. Mi formación inició con una base técnica y tecnológica sólida en el SENA, lo que me otorgó una visión práctica y operativa única para la resolución de problemas en planta e infraestructura. Como profesional, he liderado la representación legal y la ejecución de contratos tecnológicos en el sector público, especializándome en la modernización de servicios gubernamentales, soporte técnico avanzado y gestión de proyectos de ingeniería de alto impacto.',
+};
+
+export const credential = {
+  title: 'Ingeniero Mecatrónico',
+  institution: 'Fundación Universitaria Agraria de Colombia',
+  institutionShort: 'UNIAGRARIA',
+  registry: 'COPNIA',
+  registryNote: 'Disponible con copia certificada',
+  description:
+    'Mi formación como Ingeniero Mecatrónico (UNIAGRARIA) es el pilar de mi capacidad para diseñar y supervisar sistemas complejos que integran mecánica, electrónica y control. Mi proyecto de grado sobre aeronaves no tripuladas para la industria ganadera refleja mi enfoque en aplicar la tecnología para resolver necesidades reales del sector productivo. Esta titulación, respaldada por mi matrícula profesional (COPNIA), me faculta para gestionar proyectos de infraestructura tecnológica con total rigor técnico y legal.',
+  highlights: [
+    { label: 'Diseño y supervisión', value: 'Sistemas mecánica + electrónica + control' },
+    { label: 'Proyecto de grado',     value: 'Aeronaves no tripuladas (sector ganadero)' },
+    { label: 'Habilita',              value: 'Gestión técnica y legal de infraestructura' },
+  ],
 };
 
 export const company = {
@@ -77,38 +92,37 @@ export const education = [
   },
 ];
 
-// Habilidades segmentadas según experiencia: cada bloque incluye descripción
-// expandida y chips de tecnologías/áreas concretas para escaneo rápido.
+// Habilidades segmentadas según experiencia: cada bloque combina la base
+// técnica del SENA con la capacidad de ingeniería profesional UNIAGRARIA.
+// El icon es una clave que mapea a un SVG en src/components/SkillIcons.jsx
 export const skills = [
   {
-    group: 'Gestión de Infraestructura Tecnológica y Soporte IT',
+    icon: 'wrench',
+    group: 'Soporte Técnico en Mecánica Industrial y Electromecánica',
     description:
-      'Basado en mi experiencia con múltiples Concejos Municipales, poseo la capacidad de diagnosticar, mantener y optimizar redes de datos, servidores NAS y equipos de computación. Mi enfoque no es solo correctivo, sino preventivo, asegurando que las herramientas digitales de la administración pública funcionen sin interrupciones mediante configuraciones avanzadas de software y sistemas de respaldo energético.',
-    items: ['Redes de datos', 'Servidores NAS', 'Equipos de cómputo', 'Mantenimiento preventivo', 'Respaldo energético (UPS)', 'Configuración avanzada'],
+      'Gracias a mis títulos de Técnico en Mecánico de Maquinaria Industrial y Tecnólogo en Mantenimiento Electromecánico del SENA, poseo una destreza superior en el diagnóstico y reparación de activos físicos. Esta habilidad me permite intervenir maquinaria industrial, sistemas de transmisión y componentes electromecánicos con precisión técnica, garantizando la disponibilidad operativa y prolongando la vida útil de los equipos mediante planes de mantenimiento preventivo y correctivo de alta calidad.',
+    items: ['Diagnóstico de fallas', 'Maquinaria industrial', 'Sistemas de transmisión', 'Componentes electromecánicos', 'Mantenimiento preventivo', 'Mantenimiento correctivo'],
   },
   {
-    group: 'Ingeniería Electromecánica y Mantenimiento Industrial',
+    icon: 'chip',
+    group: 'Ingeniería Mecatrónica y Desarrollo Tecnológico',
     description:
-      'Gracias a mi formación como Técnico y Tecnólogo en el SENA, domino la reparación y el mantenimiento de maquinaria industrial y sistemas eléctricos complejos. Esta habilidad me permite abordar proyectos que requieren precisión mecánica y control electrónico, garantizando que los activos físicos de cualquier organización operen bajo los más altos estándares de seguridad y eficiencia.',
-    items: ['Maquinaria industrial', 'Sistemas eléctricos', 'Precisión mecánica', 'Control electrónico', 'Diagnóstico de fallas', 'HSE'],
+      'Como Ingeniero, aplico el pensamiento sistémico para la integración de hardware y software. Mi experiencia incluye el diseño e implementación de soluciones tecnológicas personalizadas, desde la configuración de servidores y redes de datos hasta el desarrollo de propuestas innovadoras en robótica y automatización. Domino la gestión de proyectos tecnológicos, asegurando que cada implementación cumpla con los estándares técnicos y las necesidades de modernización de la organización.',
+    items: ['Pensamiento sistémico', 'Integración hardware/software', 'Servidores y redes', 'Robótica y automatización', 'Gestión de proyectos', 'Modernización tecnológica'],
   },
   {
-    group: 'Sistemas de Seguridad y Transmisión Audiovisual',
+    icon: 'camera',
+    group: 'Infraestructura de Seguridad y Transmisión Audiovisual',
     description:
-      'He desarrollado una especialidad en la implementación de circuitos cerrados de televisión (CCTV) y sistemas de streaming profesional para la transparencia gubernamental. Mi experiencia incluye desde el montaje físico y la activación de cámaras hasta la configuración de licencias para redes sociales, permitiendo que las instituciones conecten de manera efectiva y segura con la ciudadanía.',
-    items: ['CCTV', 'Streaming profesional', 'Montaje y activación de cámaras', 'Transmisión gubernamental', 'Licencias para redes sociales'],
+      'He consolidado una especialidad técnica en la instalación y puesta en marcha de sistemas de Circuito Cerrado de Televisión (CCTV) y plataformas de streaming institucional. Mi enfoque abarca desde la infraestructura física y el cableado estructurado hasta la configuración lógica de software de transmisión, permitiendo a las entidades públicas y privadas mantener una comunicación transparente, segura y en tiempo real con sus audiencias.',
+    items: ['CCTV', 'Streaming institucional', 'Cableado estructurado', 'Software de transmisión', 'Infraestructura física', 'Comunicación en tiempo real'],
   },
   {
-    group: 'Gestión de Suministros y Apoyo Logístico Integral',
+    icon: 'briefcase',
+    group: 'Gestión Legal, Logística y de Suministros',
     description:
-      'Mi perfil trasciende lo técnico para abarcar la gestión administrativa de contratos de dotación y logística. Tengo la capacidad comprobada de coordinar suministros de papelería, mobiliario, equipos tecnológicos y servicios de alimentación para eventos masivos o personal de la fuerza pública, manejando presupuestos y tiempos de entrega críticos con total responsabilidad legal.',
-    items: ['Contratos de dotación', 'Papelería y oficina', 'Mobiliario institucional', 'Equipos tecnológicos', 'Alimentación y eventos masivos', 'Manejo presupuestal'],
-  },
-  {
-    group: 'Gestión de Proyectos con Herramientas Tecnológicas',
-    description:
-      'Utilizo metodologías modernas para la planeación y ejecución de proyectos, habilidad reforzada por mi diplomado en gestión de proyectos tecnológicos. Esto me permite liderar desde la redacción de gacetas municipales hasta la implementación de propuestas de vanguardia, como el uso de aeronaves no tripuladas en la industria ganadera, siempre orientando los resultados hacia la innovación y el cumplimiento de metas institucionales.',
-    items: ['Metodologías de PM', 'Diplomado en proyectos tecnológicos', 'Edición editorial municipal', 'Innovación aplicada', 'UAV / drones', 'Cumplimiento institucional'],
+      'Mi experiencia como Representante Legal en contratos estatales me ha dotado de una visión administrativa crítica. Tengo la capacidad de gestionar integralmente la cadena de suministros, desde la adquisición de mobiliario y tecnología hasta la logística de eventos de gran escala. Mi gestión garantiza el cumplimiento normativo en la contratación pública, asegurando que cada recurso se administre de forma eficiente para el fortalecimiento operativo de los entes territoriales.',
+    items: ['Representación legal', 'Contratación pública', 'Cadena de suministros', 'Cumplimiento normativo', 'Logística de eventos', 'Adquisiciones'],
   },
 ];
 
