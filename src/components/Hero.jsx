@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { profile, contact } from '../data.js';
 import { contracts } from '../data/contracts.js';
 import BranchSVG from './BranchSVG.jsx';
+import DownloadModal from './DownloadModal.jsx';
 
 function formatM(n) {
   if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)} B`;
@@ -9,6 +11,7 @@ function formatM(n) {
 }
 
 export default function Hero() {
+  const [downloadOpen, setDownloadOpen] = useState(false);
   const totalContracts = contracts.length;
   const totalValor = contracts.reduce((s, c) => s + c.valor, 0);
   const munis = new Set(contracts.map((c) => c.municipio)).size;
@@ -22,7 +25,7 @@ export default function Hero() {
       <div className="container">
         <div className="hero__badge">
           <img src="/images/logo-aconap.png" alt="" />
-          <span>Representante Legal · <strong>ACONAP Soluciones</strong></span>
+          <span>Representante de <strong>CONAP Soluciones</strong></span>
         </div>
 
         <h1 className="hero__name">{profile.name}</h1>
@@ -30,13 +33,15 @@ export default function Hero() {
         <p className="hero__tagline">{profile.tagline}</p>
 
         <div className="hero__cta">
-          <button className="btn btn--primary" onClick={() => window.print()} type="button">
+          <button className="btn btn--primary" onClick={() => setDownloadOpen(true)} type="button">
             <DownloadIcon /> Descargar HV (PDF)
           </button>
           <a className="btn btn--ghost" href="#contacto" onClick={(e) => smoothTo(e, 'contacto')}>
             Contactar
           </a>
         </div>
+
+        <DownloadModal open={downloadOpen} onClose={() => setDownloadOpen(false)} />
 
         <div className="hero__meta">
           <span>📍 {contact.location}</span>

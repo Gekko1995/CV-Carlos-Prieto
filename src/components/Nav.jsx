@@ -38,14 +38,14 @@ export default function Nav({ theme, onToggleTheme }) {
         <Link to="/" className="nav__brand" onClick={() => setOpen(false)}>
           <img
             src="/images/logo-aconap.png"
-            alt="ACONAP Soluciones"
+            alt="CONAP Soluciones"
             className="nav__brand-logo"
             width="36"
             height="36"
           />
           <span className="nav__brand-text">
             <span className="nav__brand-name">Carlos Prieto</span>
-            <span className="nav__brand-sub">ACONAP Soluciones</span>
+            <span className="nav__brand-sub">CONAP Soluciones</span>
           </span>
         </Link>
 

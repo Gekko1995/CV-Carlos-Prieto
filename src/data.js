@@ -12,13 +12,13 @@ export const profile = {
 };
 
 export const contact = {
-  email: 'carlos@fundacionwrts.org',
+  email: 'administracion@conapsoluciones.com',
   github: 'Gekko1995',
   githubUrl: 'https://github.com/Gekko1995',
   linkedin: 'Carlos Andrés Prieto Martín',
   linkedinUrl: 'https://www.linkedin.com/',
   matricula: 'Disponible con copia certificada',
-  location: 'Colombia',
+  location: 'Cundinamarca, Colombia',
 };
 
 export const experience = [
@@ -39,18 +39,13 @@ export const experience = [
   },
 ];
 
+// Orden cronológico ascendente: del más antiguo al más reciente
 export const education = [
   {
-    title: 'Ingeniería Mecatrónica',
-    institution: 'Fundación Universitaria Agraria de Colombia',
-    year: '2021',
-    type: 'pregrado',
-  },
-  {
-    title: 'Tecnólogo en Mantenimiento Electromecánico Industrial',
-    institution: 'SENA',
-    year: '2015',
-    type: 'tecnologico',
+    title: 'Bachiller Técnico Industrial',
+    institution: 'I.E.D. Técnico Industrial de Tocancipá',
+    year: '2012',
+    type: 'bachiller',
   },
   {
     title: 'Técnico en Mecánico de Maquinaria Industrial',
@@ -59,16 +54,22 @@ export const education = [
     type: 'tecnico',
   },
   {
-    title: 'Bachiller Técnico Industrial',
-    institution: 'I.E.D. Técnico Industrial de Tocancipá',
-    year: '2012',
-    type: 'bachiller',
+    title: 'Tecnólogo en Mantenimiento Electromecánico Industrial',
+    institution: 'SENA',
+    year: '2015',
+    type: 'tecnologico',
   },
   {
     title: 'Diplomado: Gestión de proyectos a través de herramientas tecnológicas',
     institution: 'Diplomado',
     year: '2020',
     type: 'diplomado',
+  },
+  {
+    title: 'Ingeniería Mecatrónica',
+    institution: 'Fundación Universitaria Agraria de Colombia',
+    year: '2021',
+    type: 'pregrado',
   },
 ];
 
