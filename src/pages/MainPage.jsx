@@ -5,7 +5,6 @@ import ExperienciaPromo from '../components/ExperienciaPromo.jsx';
 import Education from '../components/Education.jsx';
 import Skills from '../components/Skills.jsx';
 import Projects from '../components/Projects.jsx';
-import Entities from '../components/Entities.jsx';
 import Contact from '../components/Contact.jsx';
 
 export default function MainPage() {
@@ -18,7 +17,6 @@ export default function MainPage() {
       <Education />
       <Skills />
       <Projects />
-      <Entities />
       <Contact />
     </>
   );

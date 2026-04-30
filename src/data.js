@@ -13,10 +13,8 @@ export const profile = {
 
 export const contact = {
   email: 'administracion@conapsoluciones.com',
-  github: 'Gekko1995',
-  githubUrl: 'https://github.com/Gekko1995',
-  linkedin: 'Carlos Andrés Prieto Martín',
-  linkedinUrl: 'https://www.linkedin.com/',
+  phone: '3212766649',
+  phoneDisplay: '321 276 6649',
   matricula: 'Disponible con copia certificada',
   location: 'Cundinamarca, Colombia',
 };
