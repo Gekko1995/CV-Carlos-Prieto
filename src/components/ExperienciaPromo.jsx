@@ -16,7 +16,7 @@ export default function ExperienciaPromo() {
       <div className="container">
         <div className="experiencia-promo__grid">
           <div>
-            <span className="eyebrow">02 — Trayectoria contractual</span>
+            <span className="eyebrow">03 — Trayectoria contractual</span>
             <h2 className="section__title">{totalContracts} contratos públicos en {years} años</h2>
             <p className="experiencia-promo__lead">
               Trayectoria verificable en el sector público con <strong>{munis} entidades</strong> de

@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="section section--alt">
       <div className="container">
-        <SectionHeader eyebrow="06 — Contacto" title="Hablemos" />
+        <SectionHeader eyebrow="08 — Contacto" title="Hablemos" />
         <div className="contact">
           <p className="contact__lead">
             Si tienes un proyecto del sector público, una oportunidad de innovación tecnológica

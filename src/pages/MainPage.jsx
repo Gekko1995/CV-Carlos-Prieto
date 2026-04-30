@@ -1,6 +1,7 @@
 import Hero from '../components/Hero.jsx';
 import Trusted from '../components/Trusted.jsx';
 import About from '../components/About.jsx';
+import CompanyMission from '../components/CompanyMission.jsx';
 import ExperienciaPromo from '../components/ExperienciaPromo.jsx';
 import Education from '../components/Education.jsx';
 import Skills from '../components/Skills.jsx';
@@ -13,6 +14,7 @@ export default function MainPage() {
       <Hero />
       <Trusted />
       <About />
+      <CompanyMission />
       <ExperienciaPromo />
       <Education />
       <Skills />

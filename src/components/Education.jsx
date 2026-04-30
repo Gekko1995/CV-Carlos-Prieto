@@ -13,7 +13,7 @@ export default function Education() {
     <section id="educacion" className="section">
       <div className="container">
         <SectionHeader
-          eyebrow="03 — Formación"
+          eyebrow="04 — Formación"
           title="Educación"
           lead="Trayectoria académica en orden cronológico, del bachillerato al pregrado en Ingeniería Mecatrónica."
         />

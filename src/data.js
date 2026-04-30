@@ -3,12 +3,18 @@ export const profile = {
   title: 'Ingeniero Mecatrónico',
   tagline: 'Soporte técnico · Infraestructura tecnológica · Sector público',
   initials: 'CP',
-  // Para usar tu foto: pon el archivo en public/images/foto.jpg y deja:
-  // photo: '/images/foto.jpg'
-  // Si lo dejas en null, se muestra el placeholder con iniciales.
   photo: null,
   about:
-    'Ingeniero Mecatrónico con amplia experiencia en soporte técnico, gestión de infraestructura tecnológica y mantenimiento industrial para el sector público. Especialista en la ejecución de proyectos de innovación, logística y suministro de soluciones tecnológicas para entidades gubernamentales.',
+    'Soy Carlos Andrés Prieto Martín, Ingeniero Mecatrónico titulado por la Fundación Universitaria Agraria de Colombia. Cuento con una sólida formación técnica y tecnológica obtenida en el SENA, lo que me permite integrar el conocimiento teórico con la ejecución práctica en mantenimiento industrial y soporte IT. Mi trayectoria se ha centrado en el sector público, donde he actuado como representante legal y contratista, gestionando proyectos de infraestructura tecnológica, seguridad electrónica y apoyo logístico para diversas administraciones municipales.',
+};
+
+export const company = {
+  name: 'CONAP Soluciones',
+  logo: '/images/logo-aconap.png',
+  mision:
+    'Proveer soluciones integrales en ingeniería y tecnología que optimicen la gestión administrativa y operativa del sector público y privado. Nos enfocamos en garantizar la continuidad de los procesos a través de un soporte técnico de alta calidad, suministros confiables y la implementación de herramientas innovadoras que faciliten la transparencia y la eficiencia institucional.',
+  vision:
+    'Consolidarnos para el año 2030 como la empresa líder en consultoría y servicios tecnológicos en el departamento de Cundinamarca, siendo reconocidos por nuestra integridad en la contratación pública, nuestra capacidad de respuesta técnica y nuestra contribución a la modernización digital de los entes territoriales.',
 };
 
 export const contact = {
@@ -71,22 +77,38 @@ export const education = [
   },
 ];
 
+// Habilidades segmentadas según experiencia: cada bloque incluye descripción
+// expandida y chips de tecnologías/áreas concretas para escaneo rápido.
 export const skills = [
   {
-    group: 'Industrial / Electromecánica',
-    items: ['Mantenimiento preventivo y correctivo', 'Maquinaria industrial', 'Sistemas electromecánicos', 'Diagnóstico de fallas'],
+    group: 'Gestión de Infraestructura Tecnológica y Soporte IT',
+    description:
+      'Basado en mi experiencia con múltiples Concejos Municipales, poseo la capacidad de diagnosticar, mantener y optimizar redes de datos, servidores NAS y equipos de computación. Mi enfoque no es solo correctivo, sino preventivo, asegurando que las herramientas digitales de la administración pública funcionen sin interrupciones mediante configuraciones avanzadas de software y sistemas de respaldo energético.',
+    items: ['Redes de datos', 'Servidores NAS', 'Equipos de cómputo', 'Mantenimiento preventivo', 'Respaldo energético (UPS)', 'Configuración avanzada'],
   },
   {
-    group: 'Soporte IT y Redes',
-    items: ['Equipos de cómputo', 'Redes de datos', 'Servidores', 'Cableado estructurado'],
+    group: 'Ingeniería Electromecánica y Mantenimiento Industrial',
+    description:
+      'Gracias a mi formación como Técnico y Tecnólogo en el SENA, domino la reparación y el mantenimiento de maquinaria industrial y sistemas eléctricos complejos. Esta habilidad me permite abordar proyectos que requieren precisión mecánica y control electrónico, garantizando que los activos físicos de cualquier organización operen bajo los más altos estándares de seguridad y eficiencia.',
+    items: ['Maquinaria industrial', 'Sistemas eléctricos', 'Precisión mecánica', 'Control electrónico', 'Diagnóstico de fallas', 'HSE'],
   },
   {
-    group: 'Audiovisual y Seguridad',
-    items: ['CCTV', 'Streaming oficial', 'Sistemas de votación electrónica', 'Audio profesional'],
+    group: 'Sistemas de Seguridad y Transmisión Audiovisual',
+    description:
+      'He desarrollado una especialidad en la implementación de circuitos cerrados de televisión (CCTV) y sistemas de streaming profesional para la transparencia gubernamental. Mi experiencia incluye desde el montaje físico y la activación de cámaras hasta la configuración de licencias para redes sociales, permitiendo que las instituciones conecten de manera efectiva y segura con la ciudadanía.',
+    items: ['CCTV', 'Streaming profesional', 'Montaje y activación de cámaras', 'Transmisión gubernamental', 'Licencias para redes sociales'],
   },
   {
-    group: 'Gestión Pública',
-    items: ['Contratación estatal', 'Logística de suministros', 'Gestión de proyectos', 'Edición editorial municipal'],
+    group: 'Gestión de Suministros y Apoyo Logístico Integral',
+    description:
+      'Mi perfil trasciende lo técnico para abarcar la gestión administrativa de contratos de dotación y logística. Tengo la capacidad comprobada de coordinar suministros de papelería, mobiliario, equipos tecnológicos y servicios de alimentación para eventos masivos o personal de la fuerza pública, manejando presupuestos y tiempos de entrega críticos con total responsabilidad legal.',
+    items: ['Contratos de dotación', 'Papelería y oficina', 'Mobiliario institucional', 'Equipos tecnológicos', 'Alimentación y eventos masivos', 'Manejo presupuestal'],
+  },
+  {
+    group: 'Gestión de Proyectos con Herramientas Tecnológicas',
+    description:
+      'Utilizo metodologías modernas para la planeación y ejecución de proyectos, habilidad reforzada por mi diplomado en gestión de proyectos tecnológicos. Esto me permite liderar desde la redacción de gacetas municipales hasta la implementación de propuestas de vanguardia, como el uso de aeronaves no tripuladas en la industria ganadera, siempre orientando los resultados hacia la innovación y el cumplimiento de metas institucionales.',
+    items: ['Metodologías de PM', 'Diplomado en proyectos tecnológicos', 'Edición editorial municipal', 'Innovación aplicada', 'UAV / drones', 'Cumplimiento institucional'],
   },
 ];
 

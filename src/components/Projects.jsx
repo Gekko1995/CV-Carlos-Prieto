@@ -4,7 +4,7 @@ export default function Projects() {
   return (
     <section id="proyectos" className="section">
       <div className="container">
-        <SectionHeader eyebrow="05 — Portafolio" title="Proyectos destacados" />
+        <SectionHeader eyebrow="07 — Portafolio" title="Proyectos destacados" />
         <div className="projects-grid">
           {projects.map((p) => (
             <article key={p.name} className="project-card">
